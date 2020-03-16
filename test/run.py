@@ -2,8 +2,6 @@
 
 import os
 import subprocess
-import sync_ui
-sync_ui.sync()
 
 
 def main():

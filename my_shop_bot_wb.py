@@ -5,10 +5,19 @@ from wb.shop_bot.gui.shob_bot_wb import *
 from wb.shop_bot.gui.rect_gen_dialog import Ui_Dialog
 from wb.shop_bot.bolt_pattern import bolt_pattern
 import pyperclip
+import logging
 
 class my_shop_bot_wb(Ui_shop_bot_wb):
 
+    def __init__(self):
+        self._logger = logging.getLogger('log')
+        self._logger.info('shop_bot workbench instantiated')
+
+    def __del__(self):
+        self._logger.info('shop_bot_workbench deleted')
+
     def run_integrated(self, parent):
+        self._logger.info('getting shop_bot workbench ready')
         self.load_parent_elements(parent)
         self.setupUi(self.frame)
 
@@ -19,10 +28,16 @@ class my_shop_bot_wb(Ui_shop_bot_wb):
         return self
 
     def load_parent_elements(self, parent):
+        self._logger.debug('shob_bot wb loading parent elements')
         self.text_area = parent.text_area
         self.frame = parent.frame
 
     def rect_generator(self):
+        """
+        implements bolt_pattern.py
+        """
+
+        self._logger.debug('generating bolt pattern')
         # set the form up
         bp = bolt_pattern()
         dialog = QtWidgets.QDialog()

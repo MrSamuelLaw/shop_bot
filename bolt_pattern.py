@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 
 
-def d(msg, ovr=0):
-    if True:
-        print(msg)
-    elif ovr:
-        print(msg)
+import logging
 
 
 class bolt_pattern():
@@ -13,7 +9,18 @@ class bolt_pattern():
     _units = None
     unit_dict = {"in": "G20", "mm": "G21"}
 
+    def __init__(self):
+        self._logger = logging.getLogger('log')
+        self._logger.info('bolt_pattern object instantiated')
+
     def get_rect_gcode(self, units, x, y, depth):
+        """
+        generate rectangle where each corner is
+        a spot to drill shallow, in order to mark where bolts
+        should be placed to hold work down.
+        """
+
+        self._logger.debug('generating rect gcode')
         self._set_units(units)
         rect = self._set_rect(x, y)
         if self._units is not None:
@@ -35,21 +42,36 @@ class bolt_pattern():
             return gcode
 
     def _z_retract(self):
+        """
+        retract on the Z axis
+        """
+
         if self._units == 'in':
             return 1.00
         elif self._units == 'mm':
             return 25.4
 
     def _set_units(self, units):
+        """
+        set units
+        """
+
         if units.lower() not in self.unit_dict.keys():
-            d("unit not valid")
+            logging.debug("unit not valid")
             return -3
         else:
             self._units = units.lower()
-            d("units set to {}".format(self._units))
+            logging.debug("units set to {}".format(self._units))
             return 2
 
     def _set_rect(self, x, y):
+        """
+        define width and height of the rectangle
+
+        x = width
+        y = height
+        """
+
         a = (0, 0)
         b = (0, y)
         c = (y, x)
@@ -58,4 +80,7 @@ class bolt_pattern():
         return rect
 
     def _set_depth(self, depth):
+        """
+        depth to drill in inches
+        """
         return depth
