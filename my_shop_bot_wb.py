@@ -19,7 +19,7 @@ class my_shop_bot_wb(Ui_shop_bot_wb):
     def run_integrated(self, parent):
         self._logger.info('getting shop_bot workbench ready')
         self.load_parent_elements(parent)
-        self.setupUi(self.frame)
+        self.setupUi(self.wb_widget)
 
         # put functions here
         self.rect_macro_button.clicked.connect(self.rect_generator)
@@ -30,7 +30,7 @@ class my_shop_bot_wb(Ui_shop_bot_wb):
     def load_parent_elements(self, parent):
         self._logger.debug('shob_bot wb loading parent elements')
         self.text_area = parent.text_area
-        self.frame = parent.frame
+        self.wb_widget = parent.wb_widget
 
     def rect_generator(self):
         """
