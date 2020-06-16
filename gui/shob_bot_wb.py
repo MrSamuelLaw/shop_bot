@@ -1,41 +1,50 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\Samuel\Documents\CodingProjects\Python\in_progress\CNC_TOOLBOX\CNC_TOOLBOX\wb\shop_bot\gui\shob_bot_wb.ui',
-# licensing of 'c:\Users\Samuel\Documents\CodingProjects\Python\in_progress\CNC_TOOLBOX\CNC_TOOLBOX\wb\shop_bot\gui\shob_bot_wb.ui' applies.
-#
-# Created: Thu Apr  2 12:38:32 2020
-#      by: pyside2-uic  running on PySide2 5.13.0
-#
-# WARNING! All changes made in this file will be lost!
+################################################################################
+## Form generated from reading UI file 'shob_bot_wb.ui'
+##
+## Created by: Qt User Interface Compiler version 5.14.0
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
 
-from PySide2 import QtCore, QtGui, QtWidgets
+from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
+    QRect, QSize, QUrl, Qt)
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QFont,
+    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
+    QRadialGradient)
+from PySide2.QtWidgets import *
 
 class Ui_shop_bot_wb(object):
     def setupUi(self, shop_bot_wb):
-        shop_bot_wb.setObjectName("shop_bot_wb")
+        if shop_bot_wb.objectName():
+            shop_bot_wb.setObjectName(u"shop_bot_wb")
         shop_bot_wb.resize(543, 117)
-        self.gridLayout = QtWidgets.QGridLayout(shop_bot_wb)
-        self.gridLayout.setObjectName("gridLayout")
-        self.rect_macro_button = QtWidgets.QPushButton(shop_bot_wb)
-        self.rect_macro_button.setObjectName("rect_macro_button")
-        self.gridLayout.addWidget(self.rect_macro_button, 0, 1, 1, 1)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem, 0, 0, 1, 1)
+        self.gridLayout = QGridLayout(shop_bot_wb)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.rect_macro_button = QPushButton(shop_bot_wb)
+        self.rect_macro_button.setObjectName(u"rect_macro_button")
+
+        self.gridLayout.addWidget(self.rect_macro_button, 0, 2, 1, 1)
+
+        self.FnS_calc_pushButton = QPushButton(shop_bot_wb)
+        self.FnS_calc_pushButton.setObjectName(u"FnS_calc_pushButton")
+
+        self.gridLayout.addWidget(self.FnS_calc_pushButton, 0, 1, 1, 1)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer, 0, 3, 1, 1)
+
 
         self.retranslateUi(shop_bot_wb)
-        QtCore.QMetaObject.connectSlotsByName(shop_bot_wb)
+
+        QMetaObject.connectSlotsByName(shop_bot_wb)
+    # setupUi
 
     def retranslateUi(self, shop_bot_wb):
-        shop_bot_wb.setWindowTitle(QtWidgets.QApplication.translate("shop_bot_wb", "Form", None, -1))
-        self.rect_macro_button.setText(QtWidgets.QApplication.translate("shop_bot_wb", "rect_macro", None, -1))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    shop_bot_wb = QtWidgets.QWidget()
-    ui = Ui_shop_bot_wb()
-    ui.setupUi(shop_bot_wb)
-    shop_bot_wb.show()
-    sys.exit(app.exec_())
+        shop_bot_wb.setWindowTitle(QCoreApplication.translate("shop_bot_wb", u"Form", None))
+        self.rect_macro_button.setText(QCoreApplication.translate("shop_bot_wb", u"rect_macro", None))
+        self.FnS_calc_pushButton.setText(QCoreApplication.translate("shop_bot_wb", u"F and S calc", None))
+    # retranslateUi
 

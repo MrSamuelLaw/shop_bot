@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
 
 from bolt_pattern import bolt_pattern
-from wb.shop_bot.gui.rect_gen_dialog import Ui_Dialog
 import unittest
 
 
@@ -25,3 +25,8 @@ class test_bolt_pattern(unittest.TestCase):
     def test_get_gcode(self):
         bp = bolt_pattern()
         bp.get_rect_gcode('in', 10, 10, 0.02)
+        self.assertTrue(True)
+
+
+if __name__ == "__main__":
+    unittest.main()

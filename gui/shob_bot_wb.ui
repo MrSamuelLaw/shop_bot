@@ -14,14 +14,21 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="1">
+   <item row="0" column="2">
     <widget class="QPushButton" name="rect_macro_button">
      <property name="text">
       <string>rect_macro</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
+   <item row="0" column="1">
+    <widget class="QPushButton" name="FnS_calc_pushButton">
+     <property name="text">
+      <string>F and S calc</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
