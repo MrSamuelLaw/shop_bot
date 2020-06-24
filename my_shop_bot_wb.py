@@ -91,7 +91,7 @@ class my_shop_bot_wb(Ui_shop_bot_wb):
             for p in params:
                 help_text.append(': '.join( [str(p), str(params[p])] ))
             help_text = '\n'.join(help_text)
-            QtWidgets.QMessageBox.information(dialog, 'Help Menu', help_text)
+            QtWidgets.QMessageBox.information(self.dockWidget, 'Help Menu', help_text)
 
         # load the shapes comboBox
         for s in shapes:
